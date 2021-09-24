@@ -1,0 +1,88 @@
+const int MX = 2e5 + 10;
+const char nl = '\n';
+const int SQ = 1300; // n ^ 2/3
+ 
+struct Q {
+	int l, r, upd;
+	int id;
+	
+	bool operator <(const Q& he) {
+		return make_tuple(l / SQ, r / SQ, upd) < make_tuple(he.l / SQ, he.r / SQ, he.upd);
+	}
+	
+};
+ 
+vector<Q> qry;
+ 
+int n, qs;
+int a[MX], b[MX];
+int fr[MX];
+int cnt[MX];
+int ans[MX];
+vector<array<int,3>> change; // to, from
+ 
+void add(int i) {
+	int x = a[i];
+	--cnt[fr[x]];
+	++fr[x];
+	++cnt[fr[x]];
+}
+ 
+void remove(int i) {
+	int x = a[i];
+	assert(fr[x] > 0);
+	--cnt[fr[x]];
+	--fr[x];
+	++cnt[fr[x]];
+}
+	
+int get_ans() {
+	int mex = 1;
+	while(cnt[mex]) {
+		assert(mex < 5000);
+		++mex;
+	}
+	return mex;
+}
+ 
+void mos() {
+	sort(all(qry));
+	int l = 0, r = 0, upd = 0; // [l, r)
+	for(auto q : qry) {
+		while(r < q.r) {
+			add(r++);
+		}
+		while(l > q.l) {
+			add(--l);
+		}
+		while(r > q.r) {
+			remove(--r);
+		}
+		while(l < q.l) {
+			remove(l++);
+		}
+		while(upd < q.upd) {
+			int pos = change[upd][0];
+			if(l <= pos && pos < r) {
+				remove(pos);
+			}
+			a[pos] = change[upd][2];
+			if(l <= pos && pos < r) {
+				add(pos);
+			}
+			++upd;
+		}
+		while(upd > q.upd) {
+			--upd;
+			int pos = change[upd][0];
+			if(l <= pos && pos < r) {
+				remove(pos);
+			}
+			a[pos] = change[upd][1];
+			if(l <= pos && pos < r) {
+				add(pos);
+			}
+		}
+		ans[q.id] = get_ans();
+	}
+}

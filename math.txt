@@ -1,0 +1,4 @@
+
+Math Notes:
+
+	i * x % m takes on m / gcd(x, m) different values in a cycle over all 0 <= i
