@@ -33,7 +33,6 @@ struct segtree {
 	
 	struct node {
 		T val; L lz;
-		node() { val = DEF; lz = DEFL; }
 		
 		void app(L x) { // XXX
 			val += x;
