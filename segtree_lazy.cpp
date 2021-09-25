@@ -28,17 +28,12 @@ struct segtree {
 	#define lrg rb, md, ls
 	#define rrg md, re, rs
 	
-	typedef long long T;
-	typedef long long L;
-	
+	using T = long long; using L = long long;
 	static const T DEF = 1e18; static const L DEFL = 0;
 	
 	struct node {
-		T val;
-		L lz;
-		node() {
-			val = DEF; lz = DEFL;
-		}
+		T val; L lz;
+		node() { val = DEF; lz = DEFL; }
 		
 		void app(L x) { // XXX
 			val += x;
@@ -64,9 +59,7 @@ struct segtree {
 		tree[v].val = DEF;
 		tree[v].lz = DEFL;
 		if(re - rb == 1) {
-			if(rb < sz(arr)) {
-				tree[v].val = arr[rb];
-			}
+			// XXX
 			return;
 		}
 		build(lrg); build(rrg);
@@ -77,21 +70,18 @@ struct segtree {
 		if(re <= l || rb >= r) return;
 		if(l <= rb && re <= r) {
 			tree[v].app(x);
-			return;
+			return; 
 		}
-		prop(v);
-		upd(l, r, x, lrg); upd(l, r, x, rrg);
-		pull(v);
-	}
+		prop(v); upd(l, r, x, lrg); upd(l, r, x, rrg);
+		pull(v); }
 	
 	T qry(int l, int r, rg) {
 		if(re <= l || rb >= r) return DEF;
-		if(l <= rb && re <= r) {
-			return tree[v].val;
+		if(l <= rb && re <= r) { 
+			return tree[v].val; 
 		}
 		prop(v);
-		return merge(qry(l, r, lrg), qry(l, r, rrg));
-	}
+		return merge(qry(l, r, lrg), qry(l, r, rrg)); }
 	
 	#undef ls
 	#undef rs
