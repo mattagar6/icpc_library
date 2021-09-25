@@ -41,8 +41,8 @@ struct segtree {
 		
 	} tree[MX*4];
 	
-	T merge(T a, T b) { // XXX
-		return min(a, b);
+	T merge(T va, T vb) { // XXX
+		return min(va, vb);
 	}
 	
 	void pull(int v) {
