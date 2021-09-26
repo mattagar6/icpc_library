@@ -24,7 +24,7 @@ struct segtree {
 	#define ls (v<<1)
 	#define rs (v<<1^1)
 	#define md ((rb+re)>>1)
-	#define rg int rb = 0, int re = MX, int v = 1
+	#define rg int b = 0, int e = MX, int v = 1
 	#define lrg rb, md, ls
 	#define rrg md, re, rs
 	
@@ -66,8 +66,8 @@ struct segtree {
 	}
 	
 	void upd(int l, int r, L x, rg) {
-		if(re <= l || rb >= r) return;
-		if(l <= rb && re <= r) {
+		if(e <= l || b >= r) return;
+		if(l <= b && e <= r) {
 			tree[v].app(x);
 			return; 
 		}
@@ -75,8 +75,8 @@ struct segtree {
 		pull(v); }
 	
 	T qry(int l, int r, rg) {
-		if(re <= l || rb >= r) return DEF;
-		if(l <= rb && re <= r) { 
+		if(e <= l || b >= r) return DEF;
+		if(l <= b && e <= r) { 
 			return tree[v].val; 
 		}
 		prop(v);
