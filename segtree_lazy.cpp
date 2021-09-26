@@ -33,6 +33,7 @@ struct segtree {
 	
 	struct node {
 		T val; L lz;
+		int len;
 		
 		void app(L x) { // XXX
 			val += x;
@@ -55,9 +56,10 @@ struct segtree {
 	}
 	
 	void build(rg) {
+		tree[v].len = e - b;
 		tree[v].val = DEF;
 		tree[v].lz = DEFL;
-		if(re - rb == 1) {
+		if(e - b == 1) {
 			// XXX
 			return;
 		}
