@@ -15,18 +15,18 @@
  * 
  * Time: O(log(MX)), where MX is the maximum size of the array.
  * Status: tested on
- *         - https://codeforces.com/contest/52/submission/129885519
+ *         - https://codeforces.com/edu/course/2/lesson/5/2/practice
  */
  
 // TODO: add segment tree descent?
- 
+
 struct segtree {
 	#define ls (v<<1)
 	#define rs (v<<1^1)
-	#define md ((rb+re)>>1)
+	#define md ((b+e)>>1)
 	#define rg int b = 0, int e = MX, int v = 1
-	#define lrg rb, md, ls
-	#define rrg md, re, rs
+	#define lrg b, md, ls
+	#define rrg md, e, rs
 	
 	using T = long long; using L = long long;
 	static const T DEF = 1e18; static const L DEFL = 0;
