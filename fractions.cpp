@@ -1,6 +1,6 @@
 /*
  * Author: Matthew Agar
- * Date: 2021-07-29
+ * Date: 2021-09-29
  * Source: Own work
  * Description: Fraction class for exact calculations
  *              BE CAREFUL OF OVERFLOWS!!!
