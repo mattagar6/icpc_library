@@ -10,29 +10,30 @@
            - https://codeforces.com/gym/103202/submission/126719895 
  */
  
-const int P = 1e9 + 7;
+using T = long long;
+const long long P = 1e9 + 7;
  
-void mul(int &a, int b) {
-    a = (ll)a * b % P;
+void mul(T &a, T b) {
+    a = a * b % P;
 }
  
-void add(int &a, int b) {
+void add(T &a, T b) {
     a += b;
     if (a >= P) {
         a -= P;
     }
 }
  
-void sub(int &a, int b) {
+void sub(T &a, T b) {
     a -= b;
     if (a < 0) {
         a += P;
     }
 }
  
-int binPow(int a, int b) {
-    int res = 1;
-    int x = a;
+T binPow(T a, T b) {
+    T res = 1;
+    T x = a;
     for (; b > 0; b >>= 1) {
         if (b & 1) {
             mul(res, x);
@@ -42,9 +43,9 @@ int binPow(int a, int b) {
     return res;
 }
  
-vector<int> xorConvolution(vector<int> cur) {
+vector<T> xorConvolution(vector<T> cur) {
     int n = sz(cur);
-    vector<int> ncur(n);
+    vector<T> ncur(n);
     for (int len = 1; len < n; len <<= 1) {
         for (int pos = 0; pos < n; pos += len) {
             for (int i = 0; i < len; ++pos, ++i) {
@@ -60,7 +61,7 @@ vector<int> xorConvolution(vector<int> cur) {
     return cur;
 }
  
-vector<int> xorProduct(vector<int> a, vector<int> b) {
+vector<T> xorProduct(vector<T> a, vector<T> b) {
     int n = 1;
     for (; n < max(sz(a), sz(b)); n <<= 1);
     a.resize(n);
