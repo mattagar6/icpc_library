@@ -7,12 +7,16 @@
  * Time: O(1) for all methods (but quite slow)
  * Status: tested on
  *         - https://codeforces.com/contest/281/problem/B
+ *         - https://atcoder.jp/contests/abc220/tasks/abc220_g
  */
 
 string to_string(__int128 X) {
 	if (X == 0) return "0";
+	bool neg = X < 0; 
+	if (X < 0) X *= -1;
 	string s;
 	while (X > 0) { s += '0' + X % 10; X /= 10; }
+	if (neg) s += '-';
 	reverse(s.begin(), s.end());
 	return s;
 }
@@ -38,10 +42,10 @@ struct Frac {
 		num /= g; den /= g;
 		if (den < 0) den *= -1, num *= -1; }
 	
-	Frac operator   +(const Frac& he) { return Frac(num * he.den + den * he.num, den * he.den); }
-	Frac operator   -(const Frac& he) { return Frac(num * he.den - den * he.num, den * he.den); }
-	Frac operator   *(const Frac& he) { return Frac(num * he.num, den * he.den); }
-	Frac operator   /(const Frac& he) { return Frac(num * he.den, den * he.num); }
+	friend Frac operator +(const Frac& a, const Frac& b) { return Frac(a.num * b.den + a.den * b.num, a.den * b.den); }
+	friend Frac operator -(const Frac& a, const Frac& b) { return Frac(a.num * b.den - a.den * b.num, a.den * b.den); }
+	friend Frac operator *(const Frac& a, const Frac& b) { return Frac(a.num * b.num, a.den * b.den); }
+	friend Frac operator /(const Frac& a, const Frac& b) { return Frac(a.num * b.den, a.den * b.num); }
 	Frac& operator +=(const Frac& he) { return *this = *this + he; }
 	Frac& operator -=(const Frac& he) { return *this = *this - he; }
 	Frac& operator *=(const Frac& he) { return *this = *this * he; }
