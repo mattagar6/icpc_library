@@ -47,10 +47,10 @@ struct Frac {
 	Frac& operator *=(const Frac& he) { return *this = *this * he; }
 	Frac& operator /=(const Frac& he) { return *this = *this / he; }
 	
-	bool operator  ==(const Frac& he) { return num == he.num && den == he.den; }
-	bool operator  !=(const Frac& he) { return !(*this == he); }
-	bool operator   <(const Frac& he) { return num * he.den < he.num * den; }
-	bool operator  <=(const Frac& he) { return num * he.den <= he.num * den; }
+	bool operator  ==(const Frac& he) const { return num == he.num && den == he.den; }
+	bool operator  !=(const Frac& he) const { return !(*this == he); }
+	bool operator   <(const Frac& he) const { return num * he.den < he.num * den; }
+	bool operator  <=(const Frac& he) const { return num * he.den <= he.num * den; }
 	
 	friend ostream& operator <<(ostream& out, const Frac& f) { 
 		return out << to_string(f.num) << "/" << to_string(f.den); }
