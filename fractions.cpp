@@ -30,7 +30,7 @@ struct Frac {
 		if (b == 0) return a;
 		return _gcd(b, a % b); }
 	
-	Frac(T _num, T _den = 1) : num(_num), den(_den) { fix(); }
+	Frac(T _num = 0, T _den = 1) : num(_num), den(_den) { fix(); }
 	
 	void fix() { // make den > 0, reduce by gcd(num, den)
 		assert(den != 0); // dont do smth dumb
