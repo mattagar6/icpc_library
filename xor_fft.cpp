@@ -68,7 +68,7 @@ vector<T> xorProduct(vector<T> a, vector<T> b) {
     b.resize(n);
     a = xorConvolution(a);
     b = xorConvolution(b);
-    int rn = binPow(n, P - 2);
+    T rn = binPow(n, P - 2);
     for (int i = 0; i < n; ++i) {
         mul(a[i], b[i]);
         mul(a[i], rn);
