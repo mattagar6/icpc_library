@@ -9,6 +9,10 @@ using namespace std;
 #define pb push_back
 #define eb emplace_back
 
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int,int> pii;
+
 
 
 int main() {
