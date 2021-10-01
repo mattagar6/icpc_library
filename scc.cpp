@@ -17,7 +17,7 @@ struct SCC {
         ord.resize(n); used.resize(n); comp.resize(n), id.resize(n);
     }
     
-    void ae(int u, int v) { adj[0][u].pb(v); adj[1][v].pb(u); }
+    void add_edge(int u, int v) { adj[0][u].pb(v); adj[1][v].pb(u); }
     
     void dfs(int t, int v) {
         used[v] = 1;
