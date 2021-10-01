@@ -1,6 +1,6 @@
 # icpc_library
 My ICPC templates/algorithms library
 
-The Only dependencies are the `typedef` and `#define` in `content/template_light.cpp`
+The Only dependencies are the `typedef`s and `#define`s in `content/template_light.cpp`
 
 The goal it to have fast, working code to build good habits and focus on solving problems.  
