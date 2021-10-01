@@ -1,9 +1,7 @@
 /*
  * Author: Matthew Agar
- * Date: 2021-08-12
  * Source: Own work
  * Description: Euler tour for LCA on a tree
- *              Uses sparse_table.cpp
  * Time: O(n * log(n)) for initLca, O(1) for lca.
  * Status: stress-tested
  */

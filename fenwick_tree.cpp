@@ -8,8 +8,7 @@
  * Status: stress-tested
  */
 
-template<typename T>
-struct Fenwick {
+template<typename T> struct Fenwick {
 	int n;
 	vector<T> tree;
 	

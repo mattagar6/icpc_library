@@ -19,7 +19,7 @@ int a[MX], b[MX];
 int fr[MX];
 int cnt[MX];
 int ans[MX];
-vector<array<int,3>> change; // to, from
+vector<array<int,3>> change; // from, to
  
 void add(int i) {
 	int x = a[i];
