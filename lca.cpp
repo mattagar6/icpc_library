@@ -34,7 +34,7 @@ struct LCA {
 	void init(int _N) { N = _N;
 		par.resize(N); adj.resize(N); dep.resize(N); in.resize(N);
 	}
-	void ae(int x, int y) { adj[x].push_back(y); adj[y].push_back(x); }
+	void add_edge(int x, int y) { adj[x].push_back(y); adj[y].push_back(x); }
 	void go(int R = 0) { par[R] = R; dfs(R); rmq.init(tour); _init = true; } // call this!!!
 	
 	void dfs(int v) {
@@ -67,7 +67,7 @@ struct LCA {
 		while((1<<lg) < N) lg++;
 		par.assign(lg, vi(N)); adj.resize(N), dep.resize(N);
 	}
-	void ae(int x, int y) { adj[x].push_back(y); adj[y].push_back(x); }
+	void add_edge(int x, int y) { adj[x].push_back(y); adj[y].push_back(x); }
 	void go(int R = 0) { par[0][R] = R; dfs(R); _init = true; } // call this!!!
 	
 	void dfs(int v) {
