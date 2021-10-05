@@ -20,8 +20,7 @@
  *         - https://dmoj.ca/problem/wac4p5
  */
 
-template<typename T>
-class PersistentArray {
+template<typename T> class PersistentArray {
 private:	
 	struct Node {
 		Node *l, *r;
