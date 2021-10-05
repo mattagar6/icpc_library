@@ -9,6 +9,7 @@
  * Time: O(log(n)), for all treap methods (split/merge).
  * Status: tested on
  *         - https://dmoj.ca/problem/wac4p5
+ *         - Submission: https://pastebin.com/UaK53Jyk
  */
 
 mt19937 rng;
@@ -103,7 +104,10 @@ private:
 	}
 	
 public:
-	PersistentTreap() { root = nullptr; }
+	PersistentTreap(Node* R = nullptr) { root = R; }
+	PersistentTreap(const PersistentTreap& he) {
+        	root = new Node(*he.root);
+    	}
 	
 	/*
 		Add your functions here.
