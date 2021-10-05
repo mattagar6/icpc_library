@@ -5,7 +5,7 @@
  * Description: Persistent Array
  *              - Works just like a normal array, except you can make copies of it in O(1)
  *              - Supports methods:
- *                - my_array.at(i); // returns the element at position i, O(log(n)) time and space
+ *                - my_array.at(i); // returns the element at position i, O(log(n)) time
  *                - my_array.update(i, x); // set the value at position i to x, O(log(n)) time and space
  *              - Can be used to implement persistent DSU
  * Usage:
