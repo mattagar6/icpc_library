@@ -3,6 +3,8 @@
  * Date: 2021-08-09
  * Source: Own work
  * Description: Matrix multiplication and power
+ *              - Use std::array instead of std::vector if fixed sized matrices 
+ *                (reduces memory usage by a lot!)
  * Time: O(n^3) for mul (square matrices), O(n^3 * log k) for pw
  * Status: stress-tested
  */

@@ -2,3 +2,15 @@
 Math Notes:
 
 	i * x % m takes on m / gcd(x, m) different values in a cycle over all 0 <= i
+
+Fractions:
+	
+	if a/b is in simplest terms, then the simplest terms for k + (a/b) is
+			(k*b + a) / b, since gcd(a,b) == 1, by definition
+			
+	Continued fractions:
+		- See this problem/editorial:
+			- Problem: https://dmoj.ca/problem/dmopc19c7p4
+			- Editorial: https://dmoj.ca/problem/dmopc19c7p4/editorial
+			- Can use matrices to simulate the process of "concatenating" continued fractions together
+			  (2x2 matrix to maintain numerator, denominator of fraction)
