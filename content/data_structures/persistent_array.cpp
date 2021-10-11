@@ -18,6 +18,8 @@
  * Time: O(log(n)), for "at" and "update", O(1) for " = ", where n is the maximum size of the array.
  * Status: tested on
  *         - https://dmoj.ca/problem/wac4p5
+ *
+ * WARNING: HIGH MEMORY USAGE!!! (sizeof(Node) ~ 24 Bytes, Be careful when N > 2 * 10^5 and ML is 256 MB)
  */
 
 template<typename T> class PersistentArray {
