@@ -10,9 +10,7 @@
 struct DSU {
 	int N;
 	vi p, sz;
-	
-	DSU() {}
-	DSU(int nn) : N(nn) {
+	void init(int _N) { N = _N;
 		p.resize(N); sz.resize(N,1);
 		iota(all(p),0); }
 	
