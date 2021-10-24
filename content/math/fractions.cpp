@@ -25,7 +25,7 @@ struct Frac {
 	// If input < 1e9, use T = long long
 	// If input < 1e18, use T = __int128 or pray
 	// fix() is called always after construction, don't worry about it.
-	using T = __int128;
+	using T = long long;
 	T num, den;
 	
 	T _gcd(T a, T b) { // okay if a == 0, b == 0
@@ -58,4 +58,6 @@ struct Frac {
 	
 	friend ostream& operator <<(ostream& out, const Frac& f) { 
 		return out << to_string(f.num) << "/" << to_string(f.den); }
+	
+	double to_double() const { return (double) num / den; }
 };
