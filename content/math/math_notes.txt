@@ -1,7 +1,19 @@
 
-Math Notes:
+GCD things:
 
 	i * x % m takes on m / gcd(x, m) different values in a cycle over all 0 <= i
+
+Convex Hulls:
+	Maintaining Upper convex hull of lines
+		1. Sort lines in decreasing slope
+		2. Maintain hull as a stack
+		3. When adding a new (rightmost) line C to hull
+			- let hull = [..., A, B]
+			- to add C to hull, need C.intersect(A) < C.intersect(B)
+				- The lines A, B, C, should make an "A" shape
+				- if not the case, pop B from the hull
+				- Can do this without floating points, just hace to compare fractions!
+				- Example submission: https://codeforces.com/gym/102500/submission/132934198
 
 Fractions:
 	
