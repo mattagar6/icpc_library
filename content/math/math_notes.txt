@@ -14,6 +14,7 @@ Convex Hulls:
 				- if not the case, pop B from the hull
 				- Can do this without floating points, just hace to compare fractions!
 				- Example submission: https://codeforces.com/gym/102500/submission/132934198
+	Example submission with Lower convex hull: https://pastebin.com/EKMaTW36
 
 Fractions:
 	
