@@ -354,6 +354,16 @@ namespace FFT {
 }
 
 
+/*
+	API:
+	
+	template<typename T_out, typename T_in>
+    vector<T_out> multiply(const vector<T_in> &left, const vector<T_in> &right);
+    
+    template<typename T>
+    vector<T> mod_multiply(const vector<T> &left, const vector<T> &right, T mod, bool split = false);
+*/
+
 const int MOD = 998244353;
 
 int N, K;
