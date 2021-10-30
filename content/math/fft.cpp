@@ -150,7 +150,7 @@ namespace FFT {
     vector<T_out> square(const vector<T_in> &input) {
         int n = input.size();
 
-#ifdef NEAL
+#ifdef LOCAL
         // Sanity check to make sure I'm not forgetting to split.
         double max_value = *max_element(input.begin(), input.end());
         assert(n * max_value * max_value < SPLIT_CUTOFF);
@@ -212,7 +212,7 @@ namespace FFT {
         int n = left.size();
         int m = right.size();
 
-#ifdef NEAL
+#ifdef LOCAL
         // Sanity check to make sure I'm not forgetting to split.
         double max_left = *max_element(left.begin(), left.end());
         double max_right = *max_element(right.begin(), right.end());
@@ -268,7 +268,7 @@ namespace FFT {
         for (int i = 0; i < m; i++)
             assert(0 <= right[i] && right[i] < mod);
 
-#ifdef NEAL
+#ifdef LOCAL
         // Sanity check to make sure I'm not forgetting to split.
         assert(split || (double) max(n, m) * mod * mod < SPLIT_CUTOFF);
 #endif
