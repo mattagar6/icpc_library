@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Code by Neal Wu.
 namespace FFT {
     typedef double float_t;
     const float_t ONE = 1;
