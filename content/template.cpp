@@ -23,8 +23,8 @@ typedef pair<ll,ll> pll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 
-const int MX = 2e5 + 10;
 const char nl = '\n';
+const int MX = 2e5 + 10;
 
 
 
