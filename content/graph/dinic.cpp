@@ -55,6 +55,18 @@ struct Dinic {
 		- Doing some operation on a grid -> Min Cut
 			- Example problem: https://dmoj.ca/problem/nwerc11f
 			- Submission: https://pastebin.com/ced8JmG0
+			
+	Min Cut Ideas:
+		- Some problems are "optimistic", then you remove the min cut to get the answer
+			- Answer = Sum of benefits - min Cut in cost graph
+			- Example problem: https://www.spoj.com/problems/PROFIT/
+		
+		-  Min cost to divide items into 2 sets -> Min cut:
+			- Items on the left of cut are in one set, items on the right of the cut are in the other
+			- Drawing edges: 
+				- A, B must be in the same set -> Draw edge A <-> B with capacity INF
+				- A, B must be in different sets -> Draw edges S -> A, B -> T with capacities INF
+				- Draw edge A <-> B with capacity C(A, B) = cost to have A and B in different sets
 	
 	Max Flow with lower bounds on edge capacities (Flows with demands):
 		- See link: https://cp-algorithms.com/graph/flow_with_demands.html
