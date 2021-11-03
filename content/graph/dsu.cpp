@@ -6,7 +6,7 @@
  * Time: O(alpha(N)) for find and union, alpha(N) is inverse Ackermann function
  * Status: stress-tested
  */
-
+typedef vector<int> vi;
 struct DSU {
 	int N;
 	vi p, sz;
