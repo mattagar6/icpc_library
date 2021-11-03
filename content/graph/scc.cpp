@@ -6,7 +6,8 @@
  * Time: O(V + E) for go and make_dag
  * Status: stress-tested
  */
-
+#define pb push_back
+typedef vector<int> vi;
 struct SCC {
     int n;
     vector<vi> adj[2], scc;
