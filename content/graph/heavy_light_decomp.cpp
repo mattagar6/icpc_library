@@ -8,7 +8,7 @@
  * Status: Tested on https://dmoj.ca/problem/bfs19p5
  */
 
-vi adj[MX]; // heavy child is adj[v][0]
+vector<int> adj[MX]; // heavy child is adj[v][0]
 int siz[MX], par[MX];
 int up[MX]; // up[v] = highest vertex on v's heavy path
 int at[MX], tin[MX], tout[MX], tim;
