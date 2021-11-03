@@ -11,7 +11,7 @@
  * Status: tested on 
            - https://codeforces.com/contest/1466/submission/126574060
  */
-
+typedef vector<int> vi;
 vi kmp(string W) {       // T[i] = length of longest proper suffix of prefix ending at i-1, that is a prefix of W
 	vi T(sz(W) + 1, -1); // T[0] = -1
 	int cnd = 0;

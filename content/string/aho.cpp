@@ -6,7 +6,8 @@
  * Time: O(L * C), where L is the total length of all strings, C is alphabet size 
  * Status: stress-tested
  */
- 
+typedef vector<int> vi;
+#define pb push_back
 struct Aho {
     const int C = 26; //XXX
     vector<vi> tr;
