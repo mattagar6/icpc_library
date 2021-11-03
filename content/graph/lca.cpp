@@ -7,7 +7,7 @@
  * Status: tested on
  *         - https://dmoj.ca/problem/dmopc20c1p5
  */
-
+typedef vector<int> vi;
 template<typename T> struct RMQ {
 	int lvl(int x) { return 31-__builtin_clz(x); }
 	vector<T> v; vector<vi> tab; 
@@ -59,7 +59,7 @@ struct LCA {
  * Status: tested on
  *          - https://dmoj.ca/problem/dmopc20c1p5
  */
-
+typedef vector<int> vi;
 struct LCA {
 	int N; int lg = 1; bool _init = false;
 	vector<vi> par, adj; vi dep;
