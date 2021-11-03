@@ -16,7 +16,8 @@
  * Status: stress-tested
  */
 //~ #pragma once
-
+#define rep(i,a,b) for(int i = int(a); i < int(b); i++)
+typedef vector<int> vi;
 struct TwoSat {
 	int N;
 	vector<vi> gr;
