@@ -7,7 +7,7 @@
  * Verification: 
 	* https://codeforces.com/contest/498/submission/129685752
  */
-
+#define pb push_back
 struct Dinic {
 	using F = long long; // flow type
 	struct Edge { int to, rev; F cap; };
