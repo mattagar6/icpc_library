@@ -8,6 +8,7 @@
  *         - https://dmoj.ca/problem/dmopc20c1p5
  */
 typedef vector<int> vi;
+typedef pair<int,int> pii;
 template<typename T> struct RMQ {
 	int lvl(int x) { return 31-__builtin_clz(x); }
 	vector<T> v; vector<vi> tab; 
