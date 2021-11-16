@@ -5,7 +5,7 @@
  * Time: O(n * log(n)) for build, O(1) for get.
  * Status: stress-tested
  */
-
+typedef vector<int> vi;
 template<typename T> struct RMQ {
 	int lvl(int x) { return 31-__builtin_clz(x); }
 	vector<T> v; vector<vi> tab; 
