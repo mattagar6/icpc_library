@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 // Code by Neal Wu.
 namespace FFT {
     typedef double float_t;
@@ -364,35 +361,3 @@ namespace FFT {
     template<typename T>
     vector<T> mod_multiply(const vector<T> &left, const vector<T> &right, T mod, bool split = false);
 */
-
-const int MOD = 998244353;
-
-int N, K;
-
-int main() {
-    scanf("%d %d", &N, &K);
-    vector<int> achievable(10, 0);
-
-    for (int i = 0; i < K; i++) {
-        int d;
-        scanf("%d", &d);
-        achievable[d] = 1;
-    }
-
-    int goal = N / 2;
-    vector<int> result = {1};
-
-    for (int k = 30; k >= 0; k--) {
-        result = FFT::mod_multiply(result, result, MOD, true);
-
-        if (goal & 1 << k)
-            result = FFT::mod_multiply(result, achievable, MOD, true);
-    }
-
-    long long answer = 0;
-
-    for (int x : result)
-        answer = (answer + (long long) x * x) % MOD;
-
-    printf("%lld\n", answer);
-}
