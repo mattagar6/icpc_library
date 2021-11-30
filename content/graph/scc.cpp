@@ -7,6 +7,7 @@
  * Status: stress-tested
  */
 #define pb push_back
+#define rep(i,a,b) for(int i = a; i < int(b); i++)
 typedef vector<int> vi;
 struct SCC {
     int n;
