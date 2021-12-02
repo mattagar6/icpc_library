@@ -243,23 +243,3 @@ namespace NTT {
     }
 };
 
-
-int main() {
-    int N, K;
-    scanf("%d %d", &N, &K);
-    vector<int> digits(10, 0);
-
-    for (int i = 0; i < K; i++) {
-        int d;
-        scanf("%d", &d);
-        digits[d] = 1;
-    }
-
-    vector<int> result = NTT::power(digits, N / 2);
-    long long answer = 0;
-
-    for (int x : result)
-        answer = (answer + (long long) x * x) % MOD;
-
-    printf("%lld\n", answer);
-}
