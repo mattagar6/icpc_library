@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 // code by neal wu.
 // mod functions return answer! (saved me once)
 const int MOD = 998244353;
