@@ -11,7 +11,7 @@ struct DSU {
 	int N;
 	vi p, sz;
 	void init(int _N) { N = _N;
-		p.resize(N); sz.resize(N,1);
+		p.assing(N, 0); sz.assign(N,1);
 		iota(all(p),0); }
 	
 	int find(int v) { return p[v] = v == p[v] ? v : find(p[v]); }
