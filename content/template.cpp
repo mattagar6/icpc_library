@@ -26,7 +26,7 @@ int main() {
 	cin.tie(0);
 	
 	int te = 1;
-	cin >> te;
+//	cin >> te;
 	while(te--) {
 		solve();
 	}
