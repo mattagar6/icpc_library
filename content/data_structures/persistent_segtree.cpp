@@ -30,7 +30,7 @@ class PersistentSegtree {
 private:
 	
 	using T = long long;
-	static const T DEF = 0;
+	static constexpr T DEF = 0;
 	
 	struct Node {
 		Node *l, *r;
