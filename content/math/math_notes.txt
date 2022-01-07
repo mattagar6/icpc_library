@@ -15,6 +15,8 @@ Convex Hulls:
 				- Can do this without floating points, just hace to compare fractions!
 				- Example submission: https://codeforces.com/gym/102500/submission/132934198
 	Example submission with Lower convex hull: https://pastebin.com/EKMaTW36
+	
+	Convex hull of points: https://cses.fi/problemset/result/3148349/
 
 Fractions:
 	
