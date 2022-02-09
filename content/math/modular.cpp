@@ -66,15 +66,14 @@ void smallComb(int n) {
     }
 }
 
-
 // Modulus is in the input -> Inverse not guaranteed!!!
-int M;
-void add(int &a, int b) {
-	a = ((a + b) % M + M) % M;
+int MOD;
+int add(int a, int b) {
+	return ((a + b) % MOD + MOD) % MOD;
 }
-void sub(int &a, int b) {
-	a = ((a - b) % M + M) % M;
+int sub(int a, int b) {
+	return ((a - b) % MOD + MOD) % MOD;
 }
-void mul(int &a, int b) {
-	a = (ll) a * b % M;
-} 
+int mul(int a, int b) {
+	return (long long) a * b % MOD;
+}
