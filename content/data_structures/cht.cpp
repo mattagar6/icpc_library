@@ -8,7 +8,6 @@
  * Time: O(\log N)
  * Status: stress-tested
  */
-//~ #pragma once
 
 struct Line {
     mutable ll k, m, p;

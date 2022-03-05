@@ -1,8 +1,8 @@
 // Example submission: https://codeforces.com/contest/1558/submission/127638025
-//~ mt19937 rng;
-//~ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+//mt19937 rng;
+//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-const int POOL_NODES = 100;
+const int POOL_NODES = 1e6;
 struct node {
 	
 	node *left, *right;
