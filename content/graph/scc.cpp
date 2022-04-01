@@ -16,7 +16,7 @@ struct SCC {
     
     SCC(int nn) : n(nn) {
         rep(i,0,2) adj[i].resize(n);
-        ord.resize(n); used.resize(n); comp.resize(n), id.resize(n);
+        used.resize(n); comp.resize(n), id.resize(n);
     }
     
     void add_edge(int u, int v) { adj[0][u].pb(v); adj[1][v].pb(u); }
