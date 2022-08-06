@@ -40,7 +40,7 @@ struct ModInt {
     friend bool operator !=(const ModInt& a, const ModInt& b) { return !(a == b); }
 };
 
-typedef ModInt<1000000007> mint;
+using mint = ModInt<1000000007>;
 
 vector<mint> fact, finv;
 void initFact(int n) {
