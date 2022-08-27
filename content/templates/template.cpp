@@ -6,8 +6,8 @@ using namespace std;
 
 using ll = long long;
 
-const char nl = '\n';
-const int MX = 2e5 + 10;
+constexpr char nl = '\n';
+constexpr int MX = 2e5 + 10;
 
 
 void solve() {
