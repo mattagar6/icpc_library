@@ -1,5 +1,6 @@
 Don't get stuck on one approach!!
 
+1. 
 * Thue–Morse sequence *
 	A binary string that has no identical substrings that overlap
 	(Overlapping substrings -> "BYYBYYBY" has overlapping substring "BYYBY")
@@ -7,3 +8,22 @@ Don't get stuck on one approach!!
 	s = "0"
 	while s.size() < n:
 		s = s + ~s;
+
+2. 
+
+Construct a maximum sized subset of numbers <= X such that
+no 3 numbers x < y < z in the set form an arithmetic progression.
+
+ie. y - x = z - y should not hold for any x < y < z
+
+The answer is all numbers <= X who have only 0 and 1 in their base-3
+representation. 
+
+Proof: 
+
+y - x = z - y -> x + z = 2 * y, 
+
+so all 2 * y will have 2 and 0 in their representation
+x + z will have no carries when doing addition in base3
+x + z will only equal 2 * y when x = y = z, which is is impossible.
+
