@@ -40,30 +40,23 @@ struct ModInt {
     friend bool operator !=(const ModInt& a, const ModInt& b) { return !(a == b); }
 };
 
-using mint = ModInt<1000000007>;
+const int MOD = 1000000007;
+using mint = ModInt<MOD>;
 
-vector<mint> fact, finv;
+vector<mint> fact, finv, I;
 void initFact(int n) {
-    fact.resize(n+1, 1); finv.resize(n+1);
-    for(int i = 1; i <= n; i++) fact[i] = i * fact[i-1];
-    finv[n] = inv(fact[n]);
-    for(int i = n-1; i >= 0; --i) finv[i] = (i + 1) * finv[i+1];
+	fact.assign(n+1, 1); finv.assign(n+1, 1); I.assign(n+1, 1);
+	for(int i = 2; i <= n; i++) {
+		fact[i] = i * fact[i-1];
+		I[i] = (MOD - MOD / i) * I[MOD % i];
+		finv[i] = I[i] * finv[i-1];
+	}
 }
 
 mint choose(int n, int k) {
     assert(n < sz(fact));
     if(n < k) return 0;
     return fact[n] * finv[n - k] * finv[k];
-}
-
-vector<vector<mint>> bin;
-void smallComb(int n) {
-    bin.resize(n+1, vector<mint>(n+1));
-    for(int i = 0; i <= n; i++) {
-        bin[i][0] = bin[i][i] = 1;
-        for(int j = 1; j < i; j++) 
-            bin[i][j] = bin[i-1][j] + bin[i-1][j-1];
-    }
 }
 
 // Modulus is in the input -> Inverse not guaranteed!!!
